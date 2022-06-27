@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace ConsoleApp2
 {
@@ -6,7 +7,9 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Thread t = Thread.CurrentThread;
+            t.Name = "MainThread";
+            Console.WriteLine(t.Name); 
         }
     }
 }
