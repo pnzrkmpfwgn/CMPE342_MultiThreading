@@ -8,11 +8,10 @@ namespace ConsoleApp2
         public static void Thread1()
         {
             Thread t = Thread.CurrentThread;
-            for(int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(t.Name + " " + i);
-                Thread.Sleep(200);
-            }
+            
+                Console.WriteLine(t.Name + " is running.");
+                
+            
         }
 
         static void Main(string[] args)
@@ -22,9 +21,13 @@ namespace ConsoleApp2
             Thread t2 = new Thread(new ThreadStart(MyThread.Thread1));
             Thread t3 = new Thread(new ThreadStart(MyThread.Thread1));
 
-            t1.Name = "T1";
-            t2.Name = "T2";
-            t3.Name = "T3";
+            t1.Name = "Player 1";
+            t2.Name = "Player 2";
+            t3.Name = "Player 3";
+
+            t3.Priority = ThreadPriority.Highest;
+            t2.Priority = ThreadPriority.Normal;
+            t1.Priority = ThreadPriority.Lowest;
 
             t1.Start();
             t2.Start();
