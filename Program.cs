@@ -8,11 +8,18 @@ namespace ConsoleApp2
         public static void Thread1()
         {
             Console.WriteLine("Task one");
+            Thread.Sleep(500);
+            Console.WriteLine("Task one");
+            Thread.Sleep(500);
         }
 
         public static void Thread2()
         {
             Console.WriteLine("Task Two");
+            Thread.Sleep(500);
+            Console.WriteLine("Task Two");
+            Thread.Sleep(500);
+
         }
 
         static void Main(string[] args)
